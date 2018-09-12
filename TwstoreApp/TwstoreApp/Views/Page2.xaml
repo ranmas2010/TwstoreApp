@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:htmlLabel="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
+             x:Class="TwstoreApp.Views.Page2">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  Padding="10,0,10,10">
+                <Image x:Name="NewsImage" ></Image>
+                <Label Text=""
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" x:Name="NewsTitle" />
+                <htmlLabel:HtmlLabel Text="{Binding HtmlString}"  x:Name="NewsDescription"/>
+
+                <Button Text="回列表" x:Name="ReturnBut" Clicked="BackToList"  />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

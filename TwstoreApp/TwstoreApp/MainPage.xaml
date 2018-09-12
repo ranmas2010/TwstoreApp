@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TwstoreApp"
+             xmlns:custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="TwstoreApp.MainPage">
+
+    <StackLayout  Padding="10,0,10,0">
+
+        <!-- Place new controls here -->
+        <Label Text="　" TextColor="#000000" FontSize="12" />
+        <Button Text="讀取" x:Name="LoadBut" Clicked="LoadJsonAsync"  />
+        <Label Text="" TextColor="#000000" FontSize="12" x:Name="dbPath" />
+        <ListView x:Name="listView" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee" Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <custom:CircleImage Grid.Row="3" Source="{Binding image}" WidthRequest="30" HeightRequest="30" Aspect="AspectFill" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" />
+                                <Button Text="{Binding title}" TextColor="#000000" FontSize="12" VerticalOptions="CenterAndExpand" Clicked="ViewInfo" x:Name="{Binding title}" ClassId="{Binding fromID}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
